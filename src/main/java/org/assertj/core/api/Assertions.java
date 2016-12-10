@@ -820,6 +820,10 @@ public class Assertions {
     return AssertionsForClassTypes.assertThat(actual);
   }
 
+  public static void assertThat(FailableAction action) {
+
+  }
+
   /**
    * Allows to capture and then assert on a {@link Throwable} more easily when used with Java 8 lambdas.
    *

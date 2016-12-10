@@ -320,5 +320,7 @@ public class AssertionsForInterfaceTypes extends AssertionsForClassTypes {
     return new DoublePredicateAssert(actual);
   }
 
-
+  public static FailableActionAssert assertThat(FailableAction actual) {
+    return new FailableActionAssert(actual);
+  }
 }
