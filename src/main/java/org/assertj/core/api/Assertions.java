@@ -820,8 +820,14 @@ public class Assertions {
     return AssertionsForClassTypes.assertThat(actual);
   }
 
-  public static void assertThat(FailableAction action) {
-
+  /**
+   * Creates a new instance of <code>{@link FailableActionAssert}</code>.
+   *
+   * @param actual the actual value.
+   * @return the created {@link FailableActionAssert}.
+   */
+  public static FailableActionAssert assertThat(FailableAction actual) {
+    return AssertionsForInterfaceTypes.assertThat(actual);
   }
 
   /**

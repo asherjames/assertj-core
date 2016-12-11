@@ -3,5 +3,5 @@ package org.assertj.core.api;
 @FunctionalInterface
 public interface FailableAction {
 
-  void invoke();
+  void invoke() throws Exception;
 }
