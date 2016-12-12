@@ -6,7 +6,7 @@ package org.assertj.core.api;
  * @author Asher James
  * @since 3.6.2
  */
-public class FailableActionAssert extends AbstractFailableActionAssert {
+public class FailableActionAssert extends AbstractFailableActionAssert<FailableActionAssert> {
 
   protected FailableActionAssert(FailableAction actual) {
     super(actual, FailableActionAssert.class);

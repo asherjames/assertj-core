@@ -14,7 +14,8 @@ public abstract class AbstractFailableActionAssert<SELF extends AbstractFailable
     try {
       actual.invoke();
     } catch (Exception e) {
-      throwAssertionError(shouldNotThrowAnException(actual));
+      throwAssertionError(shouldNotThrowAnException(actual, e));
     }
+    return myself;
   }
 }

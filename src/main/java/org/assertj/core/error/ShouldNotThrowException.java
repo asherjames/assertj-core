@@ -4,13 +4,13 @@ import org.assertj.core.api.FailableAction;
 
 public class ShouldNotThrowException extends BasicErrorMessageFactory {
 
-  private static final String SHOULD_NOT_THROW_EXCEPTION = "%nExpecting%n  <%s>%not to throw an exception";
+  private static final String SHOULD_NOT_THROW_EXCEPTION = "%nExpecting%n  %nto not to throw an exception, but it threw <%s>";
 
-  public static ErrorMessageFactory shouldNotThrowAnException(FailableAction actual) {
-    return new ShouldNotThrowException(actual);
+  public static ErrorMessageFactory shouldNotThrowAnException(FailableAction actual, Exception exception) {
+    return new ShouldNotThrowException(actual, exception);
   }
 
-  private ShouldNotThrowException(FailableAction actual) {
-    super(SHOULD_NOT_THROW_EXCEPTION, actual);
+  private ShouldNotThrowException(FailableAction actual, Exception exception) {
+    super(SHOULD_NOT_THROW_EXCEPTION, actual, exception.getMessage());
   }
 }
