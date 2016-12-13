@@ -1,28 +1,29 @@
 package org.assertj.core.api.failableaction;
 
-import org.assertj.core.api.FailableActionAssert;
-import org.assertj.core.api.FailableActionBaseTest;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.assertj.core.api.FailableAction;
 import org.junit.Test;
 
-public class FailableAction_completesWithoutExceptions_Test extends FailableActionBaseTest {
+public class FailableAction_completesWithoutExceptions_Test {
 
   @Test
-  public void should_fail_when_action_is_null() {
+  public void action_with_no_exception_passes() {
+    FailableAction action = () -> {};
 
+    assertThat(action).completesWithoutExceptions();
   }
 
-  @Override
-  protected FailableActionAssert create_assertions() {
-    return null;
-  }
+  @Test
+  public void action_with_exception_fails() {
+    FailableAction action = () -> {
+      throw new RuntimeException("whoops");
+    };
 
-  @Override
-  protected FailableActionAssert invoke_api_method() {
-    return null;
-  }
-
-  @Override
-  protected void verify_internal_effects() {
-
+    try {
+      assertThat(action).completesWithoutExceptions();
+    } catch (AssertionError e) {
+      return;
+    }
   }
 }
