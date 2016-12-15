@@ -826,7 +826,7 @@ public class Assertions {
    * @param actual the actual value.
    * @return the created {@link FailableActionAssert}.
    */
-  public static FailableActionAssert assertThat(FailableAction actual) {
+  public static FailableActionAssert assertThatAction(FailableAction actual) {
     return AssertionsForInterfaceTypes.assertThat(actual);
   }
 
